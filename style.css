@@ -1,0 +1,50 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+#content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tic-tac-toe {
+    display: grid;
+    grid-template-rows: repeat(3, 100px);
+    grid-template-columns: repeat(3, 100px);
+    border: 2px solid black; /* Outer border */
+    border-collapse: collapse; /* Ensure no double borders */
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; /* Ensure borders are included in the size */
+}
+
+.tic-tac-toe > .cell:nth-child(3n) {
+    border-right: none; /* Remove right border for third column */
+}
+
+.tic-tac-toe > .cell:nth-child(-n+3) {
+    border-top: none; /* Remove top border for first row */
+}
+
+.tic-tac-toe > .cell:nth-child(3n+1) {
+    border-left: none; /* Remove left border for first column */
+}
+
+.tic-tac-toe > .cell:nth-child(n+7) {
+    border-bottom: none; /* Remove bottom border for third row */
+}
